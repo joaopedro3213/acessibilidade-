@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
     botaoDeAcessibilidade.addEventListener('click', function () {
         botaoDeAcessibilidade.classList.toggle('rotacao-botao');
         opcoesDeAcessibilidade.classList.toggle('apresenta-lista')
+        
+        const botaoSelecionado = botaoDeAcessibilidade.getAttribute('aria-expanded') === 'true';
+        botaoDeAcessibilidade.setAttribute('aria-expanded', !botaoSelecionado)
 
     })
 
@@ -33,3 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 })
+
+ScrollReveal().reveal('#inicio', { delay: 500 });
+ScrollReveal().reveal('#Fred e Fabricio', { delay: 500 });
+ScrollReveal().reveal('#galeria', { delay: 500 });
+ScrollReveal().reveal('#contato', { delay: 500 });
